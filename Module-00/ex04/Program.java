@@ -14,31 +14,11 @@ public class Program {
 		return table;
 	}
 
-	private static int[] sort(int[] table) {
-		int[] sorted = new int[MAX_CHAR_CODES];
-		for (int i = 0; i < MAX_CHAR_CODES; i++) {
-			sorted[i] = i;
-		}
-
-		for (int i = 0; i < MAX_CHAR_CODES - 1; i++) {
-			for (int j = 0; j < MAX_CHAR_CODES - i - 1; j++) {
-				if (table[sorted[j]] < table[sorted[j + 1]]) {
-					int temp = sorted[j];
-					sorted[j] = sorted[j + 1];
-					sorted[j + 1] = temp;
-				}
-			}
-		}
-		return sorted;
-	}
-
-
 	private static char[] rank(int[] table) {
 		char[] top = new char[MAX_HEIGHT];
 
-		int[] sorted = sort(table);
-		for (int i = 0; i < MAX_HEIGHT; i++) {
-			top[i] = (char)sorted[i];
+		for (int i = 0; i < MAX_CHAR_CODES; i++) {
+
 		}
 		return top;
 	}
