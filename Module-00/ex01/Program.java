@@ -12,7 +12,7 @@ public class Program {
 			while (i <= number / i) {
 				if (number % i == 0) {
 					System.out.format("false %d\n", i - 1);
-					return ;
+					return;
 				}
 				i++;
 			}
