@@ -1,5 +1,6 @@
 public class Program {
 	public static void main(String[] args) {
+	
 		User sender =  new User();
 		sender.setId(1);
 		sender.setName("moad");
@@ -16,5 +17,6 @@ public class Program {
 		transaction.setSender(sender);
 		transaction.setRecipient(recipient);
 		transaction.setAmount(500);
+		transaction.print();
 	}
 };

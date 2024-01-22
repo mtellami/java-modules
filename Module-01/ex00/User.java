@@ -1,7 +1,8 @@
 public class User {
 	private Integer id;
-	private String name;
-	private int balance;
+	private String 	name;
+	private int 		balance;
+	private String 	transfer;
 
 	public Integer getId() {
 		return this.id;
@@ -21,6 +22,13 @@ public class User {
 	}
 	public void setBalance(int balance) {
 		this.balance = balance;
+	}
+
+	public String getTransfer() {
+		return this.transfer;
+	}
+	public void setTransfer(String transfer) {
+		this.transfer = transfer;
 	}
 
 	public void print() {

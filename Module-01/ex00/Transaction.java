@@ -36,6 +36,34 @@ public class Transaction {
 	public int getAmount() {
 		return this.amount;
 	}
-	public void setAmount(int amount) {
+	public void setAmount(int transferAmount) {
+		if (transferAmount >= 0) {
+			if (sender.getBalance() < transferAmount) {
+				System.err.println("Sender does not have anough amount to transfer");
+				System.exit(-1);
+			}
+			sender.setTransfer("OUTCOME");
+			recipient.setTransfer("INCOME");
+		} else {
+			if (recipient.getBalance() < Math.abs(transferAmount)) {
+				System.err.println("Sender does not have anough amount to transfer");
+				System.exit(-1);
+			}
+			sender.setTransfer("INCOME");
+			recipient.setTransfer("OUTCOME");
+		}
+
+		sender.setBalance(sender.getBalance() - transferAmount);
+		recipient.setBalance(recipient.getBalance() + transferAmount);
+		this.amount = transferAmount;
+	}
+
+	public void print() {
+		System.out.format("\nid: %s\n", id);
+		System.out.format("Sender: %s, %d %s\n", sender.getName(), -amount, sender.getTransfer());
+		System.out.format("Sender: %s, %d %s\n\n", recipient.getName(), amount, recipient.getTransfer());
+
+		System.out.format("- SENDER\nid: %s\nname: %s\nbalance: %d\n\n", sender.getId(), sender.getName(), sender.getBalance());
+		System.out.format("- RECIPIENT\nid: %s\nname: %s\nbalance: %d\n", recipient.getId(), recipient.getName(), recipient.getBalance());
 	}
 };
