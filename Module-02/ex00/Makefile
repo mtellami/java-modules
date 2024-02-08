@@ -1,7 +1,6 @@
 MAIN=Program
 
-SRC=$(MAIN).java User.java TransactionsService.java\
-		UsersList.java
+SRC=$(MAIN).java Signature.java
 
 CLASS=$(SRC:.java=.class)
 
