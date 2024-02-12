@@ -1,7 +1,7 @@
 public class Program {
-	public static void main(String[] args) {
-		private static final int = 2000000;
+	private static final int MAX_THREADS = 2000000;
 
+	public static void main(String[] args) {
 		if (args.length != 2) {
 			System.err.println("Error: wrong arguments");
 			System.exit(-1);
@@ -12,5 +12,8 @@ public class Program {
 		}
 		int arraySize = Integer.parseInt(args[0].split("=")[1]);
 		int threadsCount = Integer.parseInt(args[1].split("=")[1]);
+
+		System.out.println(arraySize);
+		System.out.println(threadsCount);
 	}
 }
