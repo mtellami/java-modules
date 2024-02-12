@@ -1,6 +1,6 @@
 MAIN=Program
 
-SRC=$(MAIN).java Signature.java
+SRC=$(MAIN).java
 
 CLASS=$(SRC:.java=.class)
 
@@ -10,7 +10,6 @@ $(CLASS):
 	@javac $(SRC)
 
 run: $(CLASS)
-	@echo
 	@java $(MAIN)
 
 clean:
