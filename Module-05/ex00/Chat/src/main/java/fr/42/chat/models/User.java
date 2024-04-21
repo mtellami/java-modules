@@ -51,7 +51,7 @@ public class User {
   }
 
   // getters
-  public long getID() {
+  public long getId() {
     return id;
   }
   public String getLogin() {
