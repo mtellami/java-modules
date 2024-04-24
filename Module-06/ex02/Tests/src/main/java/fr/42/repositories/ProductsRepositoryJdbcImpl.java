@@ -49,7 +49,7 @@ public class ProductsRepositoryJdbcImpl implements ProductsRepository {
         throw new RuntimeException();
       }
     } catch (SQLException e) {
-      e.printStackTrace();
+      // e.printStackTrace();
       return Optional.empty();
     }
   }
