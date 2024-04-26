@@ -5,6 +5,10 @@ import classes.PrinterWithPrefixImpl;
 import classes.RendererErrImpl;
 import interfaces.PreProcessor;
 import interfaces.Renderer;
+import interfaces.Printer;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.ApplicationContext;
 
 public class Main {
   public static void main(String[] args) {
@@ -15,7 +19,7 @@ public class Main {
     // printer.print("Hello!");
 
     ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-    Printer printer = context.getBean("printerWithPrefix", Printer.class);
+    Printer printer = context.getBean("printerWithPrefixOutToLower", Printer.class);
     printer.print("Hello!");
   }
 }
